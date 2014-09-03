@@ -1,0 +1,28 @@
+/*************************************************************************
+	> File Name: client.c
+	> Author: yang
+	> Mail:826123027@qq.com 
+	> Created Time: 2014年09月02日 星期二 10:43:51
+ ************************************************************************/
+
+#include<my_socket.h>
+#include<my_sort.h>
+#define IP "127.0.1.1"
+#define PORT 8888
+int main(){
+	srand(getpid());
+	SA server_addr;
+	int fd_socket,index,msg[128],sendlen,recvlen;
+	my_socketCli(&fd_socket,MY_TCP,IP,PORT,&server_addr);
+	my_connect(fd_socket,(pSA)&server_addr,sizeof(SA));
+	arr_init(msg,10);
+	arr_show(msg,10);
+	my_send(&sendlen,fd_socket,msg,10*4);
+	my_recv(&recvlen,fd_socket,msg,1024);
+	printf("after sort\n");
+	arr_show(msg,10);
+	my_close(fd_socket);
+}
+	
+
+

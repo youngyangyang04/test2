@@ -1,0 +1,2 @@
+server:*.c *.h
+	gcc 5ziqi.c 5ziqi_checkfive1.c 5ziqi_checkfive2.c my_socket.c -o server -I ./

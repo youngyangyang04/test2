@@ -1,0 +1,2 @@
+client:*.c *.h
+	gcc 5ziqi_cli.c 5ziqi_checkfive1.c 5ziqi_checkfive2.c my_socket.c -o client -I ./
